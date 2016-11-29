@@ -2,10 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <script src = "touchjs-master/touch.js"></script>
+    <script src = "touchjs-master/zepto.min.js"></script>
     <style>
         *{
             box-sizing:border-box;
@@ -17,15 +16,13 @@
         }
         .wheel{
             width:100%;
-            height:200px;
+            height:500px;
             margin:0;
-            border:1px solid red;
         }
         .box{
             width:300%;
             height:100%;
             margin:0;
-            border:1px solid blue;
         }
         .box a{
             float:left;
@@ -39,19 +36,21 @@
             text-decoration:none;
             margin:0;
             padding:0;
+            overflow: hidden;
         }
         .box a:nth-child(1){
-            background:palevioletred;
+            background:url("img/11.jpg");
+            background-size: cover;
         }
         .box a:nth-child(2){
-            background:cornflowerblue;
+            background:url("img/12.jpg");
+            background-size: cover;
         }
-        .box a:nth-child(3){
-            background:greenyellow;
+        .box a:nth-child(3) {
+            background: url("img/10.jpg");
+            background-size: cover;
         }
     </style>
-    <script src = "touchjs-master/touch.js"></script>
-    <script src = "touchjs-master/zepto.min.js"></script>
     <script>
         $(function(){
             var width = $(window).width();
@@ -75,7 +74,6 @@
                     marginLeft:e.x+marginL
                 })
             });
-
             touch.on("body","dragend",".box",function(e){
                 if(Math.abs(e.x)>100){
                     if(e.direction == "left"){
@@ -106,9 +104,9 @@
 <body>
 <div class="wheel">
     <div class="box">
-        <a href="#">1</a>
-        <a href="#">2</a>
-        <a href="#">3</a>
+        <a href="javascript:;"></a>
+        <a href="javascript:;"></a>
+        <a href="javascript:;"></a>
     </div>
 </div>
 </body>
